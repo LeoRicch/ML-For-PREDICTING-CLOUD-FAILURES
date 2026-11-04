@@ -1,0 +1,20 @@
+# Local environments, caches and generated run history
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+work/
+.env
+.env.*
+data/*
+!data/.gitkeep
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+
+# Keep only the selected reproducible model release
+models/*
+!models/current.json
+!models/rf-20261104T091348102905Z/
+models/rf-20261104T091348102905Z/selected_candidate.joblib

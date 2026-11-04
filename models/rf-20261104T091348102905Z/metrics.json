@@ -1,0 +1,410 @@
+{
+  "version": "rf-20261104T091348102905Z",
+  "created": "2026-11-04T11:27:20.685949+00:00",
+  "generator_version": "resource-shortfall-v1",
+  "scope": "Synthetic resource-related task failures only; real-cloud accuracy unverified.",
+  "dataset_runs": 600,
+  "dataset_rows": 1089871,
+  "horizon": 5,
+  "features": [
+    "cpu_utilisation",
+    "memory_utilisation",
+    "cpu_request_ratio",
+    "memory_request_ratio",
+    "active_task_count",
+    "task_age",
+    "shortfall_streak"
+  ],
+  "partition_counts": {
+    "train": {
+      "runs": 360,
+      "rows": 652176,
+      "nonfailure": 581449,
+      "failure": 70727
+    },
+    "validation": {
+      "runs": 120,
+      "rows": 219994,
+      "nonfailure": 195885,
+      "failure": 24109
+    },
+    "test": {
+      "runs": 120,
+      "rows": 217701,
+      "nonfailure": 194066,
+      "failure": 23635
+    }
+  },
+  "parameters": {
+    "n_estimators": 100,
+    "max_depth": null,
+    "min_samples_leaf": 5,
+    "class_weight": "balanced_subsample",
+    "random_state": 42,
+    "n_jobs": 3
+  },
+  "threshold": 0.7,
+  "validation": {
+    "observations": 219994,
+    "accuracy": 0.9757947944034837,
+    "precision": 0.8275212721439531,
+    "recall": 0.9842797295615745,
+    "f1": 0.8991190679170219,
+    "confusion_matrix": [
+      [
+        190939,
+        4946
+      ],
+      [
+        379,
+        23730
+      ]
+    ],
+    "true_negatives": 190939,
+    "false_positives": 4946,
+    "false_negatives": 379,
+    "true_positives": 23730
+  },
+  "test": {
+    "observations": 217701,
+    "accuracy": 0.9757970794805719,
+    "precision": 0.826960051271096,
+    "recall": 0.9826951554897398,
+    "f1": 0.8981264863401713,
+    "confusion_matrix": [
+      [
+        189206,
+        4860
+      ],
+      [
+        409,
+        23226
+      ]
+    ],
+    "true_negatives": 189206,
+    "false_positives": 4860,
+    "false_negatives": 409,
+    "true_positives": 23226,
+    "failed_tasks": 11684,
+    "warned_failed_tasks": 11659,
+    "missed_failed_tasks": 25,
+    "task_failure_recall": 0.9978603218076001,
+    "median_warning_minutes": 2.0,
+    "mean_warning_minutes": 1.9963976327300799,
+    "alert_episodes": 14806,
+    "false_alert_episodes": 3128,
+    "false_alert_episodes_per_run": 26.066666666666666,
+    "note": "Alert episodes here use evaluable observation windows only; right-censored windows are excluded."
+  },
+  "majority_baseline": {
+    "observations": 217701,
+    "accuracy": 0.8914336636028314,
+    "precision": null,
+    "recall": 0.0,
+    "f1": 0.0,
+    "confusion_matrix": [
+      [
+        194066,
+        0
+      ],
+      [
+        23635,
+        0
+      ]
+    ],
+    "true_negatives": 194066,
+    "false_positives": 0,
+    "false_negatives": 23635,
+    "true_positives": 0
+  },
+  "shortfall_baseline": {
+    "observations": 217701,
+    "accuracy": 0.9359304734475267,
+    "precision": 0.8537725513110803,
+    "recall": 0.4945631478739158,
+    "f1": 0.6263194556073515,
+    "confusion_matrix": [
+      [
+        192064,
+        2002
+      ],
+      [
+        11946,
+        11689
+      ]
+    ],
+    "true_negatives": 192064,
+    "false_positives": 2002,
+    "false_negatives": 11946,
+    "true_positives": 11689
+  },
+  "per_scenario": {
+    "low": {
+      "observations": 47214,
+      "accuracy": 0.9947049603931037,
+      "precision": 0.8299912816041848,
+      "recall": 0.945382323733863,
+      "f1": 0.8839368616527391,
+      "confusion_matrix": [
+        [
+          46012,
+          195
+        ],
+        [
+          55,
+          952
+        ]
+      ],
+      "true_negatives": 46012,
+      "false_positives": 195,
+      "false_negatives": 55,
+      "true_positives": 952
+    },
+    "medium": {
+      "observations": 73489,
+      "accuracy": 0.9795751745159139,
+      "precision": 0.8117465657415195,
+      "recall": 0.9734409144394016,
+      "f1": 0.8852709623175112,
+      "confusion_matrix": [
+        [
+          66197,
+          1343
+        ],
+        [
+          158,
+          5791
+        ]
+      ],
+      "true_negatives": 66197,
+      "false_positives": 1343,
+      "false_negatives": 158,
+      "true_positives": 5791
+    },
+    "high": {
+      "observations": 96998,
+      "accuracy": 0.9637312109528031,
+      "precision": 0.8322645796516032,
+      "recall": 0.9882486959649859,
+      "f1": 0.9035741694989584,
+      "confusion_matrix": [
+        [
+          76997,
+          3322
+        ],
+        [
+          196,
+          16483
+        ]
+      ],
+      "true_negatives": 76997,
+      "false_positives": 3322,
+      "false_negatives": 196,
+      "true_positives": 16483
+    }
+  },
+  "stress": {
+    "observations": 46147,
+    "accuracy": 0.9494008277894554,
+    "precision": 0.9302738336713996,
+    "recall": 0.9223807428822827,
+    "f1": 0.9263104743270111,
+    "confusion_matrix": [
+      [
+        29136,
+        1100
+      ],
+      [
+        1235,
+        14676
+      ]
+    ],
+    "true_negatives": 29136,
+    "false_positives": 1100,
+    "false_negatives": 1235,
+    "true_positives": 14676,
+    "failed_tasks": 7898,
+    "warned_failed_tasks": 7634,
+    "missed_failed_tasks": 264,
+    "task_failure_recall": 0.9665738161559888,
+    "median_warning_minutes": 2.0,
+    "mean_warning_minutes": 1.9441970133612785,
+    "alert_episodes": 8318,
+    "false_alert_episodes": 681,
+    "false_alert_episodes_per_run": 22.7,
+    "note": "Alert episodes here use evaluable observation windows only; right-censored windows are excluded."
+  },
+  "stress_runs": 30,
+  "learning_curve": [
+    {
+      "training_runs": 90,
+      "training_observations": 162804,
+      "observations": 219994,
+      "accuracy": 0.9756675182050419,
+      "precision": 0.8275356244761106,
+      "recall": 0.9827865112613546,
+      "f1": 0.8985040101628714,
+      "confusion_matrix": [
+        [
+          190947,
+          4938
+        ],
+        [
+          415,
+          23694
+        ]
+      ],
+      "true_negatives": 190947,
+      "false_positives": 4938,
+      "false_negatives": 415,
+      "true_positives": 23694
+    },
+    {
+      "training_runs": 180,
+      "training_observations": 326471,
+      "observations": 219994,
+      "accuracy": 0.9757493386183259,
+      "precision": 0.8279186753301194,
+      "recall": 0.983035380978058,
+      "f1": 0.8988337915995069,
+      "confusion_matrix": [
+        [
+          190959,
+          4926
+        ],
+        [
+          409,
+          23700
+        ]
+      ],
+      "true_negatives": 190959,
+      "false_positives": 4926,
+      "false_negatives": 409,
+      "true_positives": 23700
+    },
+    {
+      "training_runs": 360,
+      "training_observations": 652176,
+      "observations": 219994,
+      "accuracy": 0.9757947944034837,
+      "precision": 0.8275212721439531,
+      "recall": 0.9842797295615745,
+      "f1": 0.8991190679170219,
+      "confusion_matrix": [
+        [
+          190939,
+          4946
+        ],
+        [
+          379,
+          23730
+        ]
+      ],
+      "true_negatives": 190939,
+      "false_positives": 4946,
+      "false_negatives": 379,
+      "true_positives": 23730
+    }
+  ],
+  "candidate_trials": [
+    {
+      "parameters": {
+        "n_estimators": 100,
+        "max_depth": 10,
+        "min_samples_leaf": 1,
+        "class_weight": "balanced_subsample",
+        "random_state": 42,
+        "n_jobs": 3
+      },
+      "validation_f1_at_05": 0.8936544800719209
+    },
+    {
+      "parameters": {
+        "n_estimators": 100,
+        "max_depth": 10,
+        "min_samples_leaf": 5,
+        "class_weight": "balanced_subsample",
+        "random_state": 42,
+        "n_jobs": 3
+      },
+      "validation_f1_at_05": 0.8934019653720169
+    },
+    {
+      "parameters": {
+        "n_estimators": 100,
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "class_weight": "balanced_subsample",
+        "random_state": 42,
+        "n_jobs": 3
+      },
+      "validation_f1_at_05": 0.886511482091073
+    },
+    {
+      "parameters": {
+        "n_estimators": 100,
+        "max_depth": null,
+        "min_samples_leaf": 5,
+        "class_weight": "balanced_subsample",
+        "random_state": 42,
+        "n_jobs": 3
+      },
+      "validation_f1_at_05": 0.8965893485335892
+    },
+    {
+      "parameters": {
+        "n_estimators": 200,
+        "max_depth": 10,
+        "min_samples_leaf": 1,
+        "class_weight": "balanced_subsample",
+        "random_state": 42,
+        "n_jobs": 3
+      },
+      "validation_f1_at_05": 0.8937285818617628
+    },
+    {
+      "parameters": {
+        "n_estimators": 200,
+        "max_depth": 10,
+        "min_samples_leaf": 5,
+        "class_weight": "balanced_subsample",
+        "random_state": 42,
+        "n_jobs": 3
+      },
+      "validation_f1_at_05": 0.8933557926258656
+    },
+    {
+      "parameters": {
+        "n_estimators": 200,
+        "max_depth": null,
+        "min_samples_leaf": 1,
+        "class_weight": "balanced_subsample",
+        "random_state": 42,
+        "n_jobs": 3
+      },
+      "validation_f1_at_05": 0.8862599157771032
+    },
+    {
+      "parameters": {
+        "n_estimators": 200,
+        "max_depth": null,
+        "min_samples_leaf": 5,
+        "class_weight": "balanced_subsample",
+        "random_state": 42,
+        "n_jobs": 3
+      },
+      "validation_f1_at_05": 0.8967204169567426
+    }
+  ],
+  "feature_importance": {
+    "cpu_utilisation": 0.016470969081383,
+    "memory_utilisation": 0.013517218338027437,
+    "cpu_request_ratio": 0.005811799519647612,
+    "memory_request_ratio": 0.008246686343166349,
+    "active_task_count": 0.07868652359740556,
+    "task_age": 0.2927268083581963,
+    "shortfall_streak": 0.5845399947621737
+  },
+  "training_seconds": 8018.58,
+  "methodology_change": "600 default independent runs replace the chapter's planned 150; same 60:20:20 grouping."
+}
