@@ -1,6 +1,12 @@
 @echo off
 setlocal
 cd /d "%~dp0"
+if exist "runtime\python.exe" (
+  echo This is the offline edition. No setup or Internet is needed.
+  echo Double-click START_APP.bat.
+  pause
+  exit /b 0
+)
 if not exist ".venv\Scripts\python.exe" python -m venv .venv
 if errorlevel 1 goto failed
 if exist requirements-lock.txt (

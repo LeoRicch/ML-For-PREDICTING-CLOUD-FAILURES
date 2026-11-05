@@ -4,6 +4,10 @@ A local Python application for generating virtual cloud jobs and predicting reso
 
 ## Start the app
 
+**Offline transfer:** use the complete `Sarah_Cloud_Lab_OFFLINE_Windows_x64.zip` portable build. Extract All, then double-click START_APP.bat. That edition includes Python and all libraries and needs no installation or Internet. A GitHub source ZIP is not the portable edition. See [offline build and transfer instructions](docs/OFFLINE_DISTRIBUTION.md).
+
+**Source checkout:** follow the setup below once before running.
+
 Install **Python 3.14**, clone or download this repository, then double-click **SETUP.bat** once with Internet access. Setup creates an isolated `.venv` and installs the tested package versions from `requirements-lock.txt`.
 
 Double-click **START_APP.bat** to open **http://127.0.0.1:5057**. Keep its terminal window open while using the lab. Close that window or press Ctrl+C there to stop the server. Once installed, normal operation works offline.
@@ -81,4 +85,4 @@ The recovery capability extends the chapters' original advisory-only prototype. 
 
 The selected model uses 600 independent simulated runs and 1,089,871 labelled observations. Whole-run partitions contain 360 training, 120 validation and 120 test runs. Held-out observation-level accuracy is 97.58%, precision 82.70%, recall 98.27%, and F1 89.81%; median eligible warning lead time is two simulated minutes. These synthetic results do not establish accuracy on real cloud infrastructure. The included `metrics.json` reports false alarms, missed failures, class counts, reference comparisons and separate stress results.
 
-Validation completed with 30 passing Python tests and a JavaScript syntax check. The tests audit independent data partitions, label timing, serialized predictions, recovery limits and preservation of original failure outcomes. The browser interface was checked with the final model and recovery queue.
+Validation completed with 33 passing Python tests and a JavaScript syntax check. The tests audit independent data partitions, label timing, serialized predictions, recovery limits and preservation of original failure outcomes. The browser interface was checked with the final model and recovery queue.

@@ -7,6 +7,9 @@ __pycache__/
 work/
 .env
 .env.*
+runtime/
+dist/
+*.zip
 data/*
 !data/.gitkeep
 *.sqlite3
